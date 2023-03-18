@@ -1,5 +1,12 @@
 {
-  "header": {
-    "title": "Bienvenido de vuelta!"
+  "home": {
+    "header": {
+      "title": "Bienvenido de vuelta!"
+    },
+    "yourPoints": "TUS PUNTOS",
+    "yourMovements": "TUS MOVIMIENTOS"
+  },
+  "months": {
+    "december": "Diciembre"
   }
 }

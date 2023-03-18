@@ -7,8 +7,8 @@ interface Props {
 export const Header = ({nameUser}: Props) => {
   const {t} = useTranslation();
   return (
-    <Box>
-      <Text variant="title">{t('header.title')}</Text>
+    <Box mb="sm">
+      <Text variant="title">{t('home.header.title')}</Text>
       <Text>{nameUser}</Text>
     </Box>
   );
