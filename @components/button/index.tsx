@@ -34,7 +34,7 @@ const ButtonContainer = createRestyleComponent<
 );
 
 interface ButtonProps extends React.ComponentProps<typeof ButtonContainer> {
-  label?: string;
+  label: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
       onPress={onPress}
       disabled={disabled}
       {...rest}>
-      <Text color={'white'} fontWeight="800">
+      <Text color={'white'} fontWeight="900">
         {label}
       </Text>
     </ButtonContainer>

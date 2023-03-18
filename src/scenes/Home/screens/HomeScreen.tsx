@@ -21,7 +21,7 @@ export function HomeScreen() {
       product: 'Fantastic Granite Bacon',
       points: 42416,
       image: 'https://loremflickr.com/640/480/technics',
-      is_redemption: false,
+      is_redemption: true,
       id: '4',
     },
   ];

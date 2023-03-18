@@ -3,7 +3,8 @@ import {RFValue} from 'react-native-responsive-fontsize';
 
 export const colors = {
   primary: '#334FFA',
-  purpleLight: '#8C6FF7',
+
+  purpleLight: '#CFD6FF',
   purplePrimary: '#5A31F4',
   purpleDark: '#3F22AB',
 
@@ -48,6 +49,20 @@ export const theme = createTheme({
       fontFamily: 'Avenir',
       fontWeight: '900',
       color: 'white',
+    },
+    h2: {
+      fontSize: RFValue(20),
+      lineHeight: RFValue(24),
+      fontFamily: 'Avenir',
+      fontWeight: '900',
+      color: 'black',
+    },
+    h3: {
+      fontSize: RFValue(16),
+      lineHeight: RFValue(22),
+      fontFamily: 'Avenir',
+      fontWeight: '900',
+      color: 'black',
     },
     h4: {
       fontSize: RFValue(14),

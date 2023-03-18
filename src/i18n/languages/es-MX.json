@@ -8,5 +8,11 @@
   },
   "months": {
     "december": "Diciembre"
-  }
+  },
+  "details": {
+    "detailsProduct": "Detalles del producto:",
+    "pointsEarned": "Con esta compra acumulaste:"
+  },
+  "points": "puntos",
+  "accept": "Aceptar"
 }
