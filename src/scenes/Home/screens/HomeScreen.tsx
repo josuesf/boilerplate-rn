@@ -6,7 +6,7 @@ export function HomeScreen() {
   return (
     <Container>
       <Box mx="sm" mt="l">
-        <Header />
+        <Header nameUser="Josue Farfan" />
       </Box>
     </Container>
   );
