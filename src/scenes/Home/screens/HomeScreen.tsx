@@ -3,15 +3,13 @@ import {Box, Button, Card, Container, Text} from '@components';
 import {Header} from '../components/Header';
 import {useTranslation} from 'react-i18next';
 import {ListPoints} from '../components/ListPoints';
-import {useGetProductsQuery} from 'src/api/productsApi';
+import {useGetProductsQuery, FILTERS} from 'src/api/productsApi';
 import {getTotalPoints} from 'src/common/utils/calculation';
 
 export function HomeScreen() {
   const {t} = useTranslation();
-  const [withRedemption, setWithRedemption] = React.useState<boolean | null>(
-    null,
-  );
-  const {data, isFetching} = useGetProductsQuery(withRedemption);
+  const [filter, setFilter] = React.useState<string>('');
+  const {data, isFetching} = useGetProductsQuery(filter);
   return (
     <Container>
       <Box flex={1} mx="sm" mt="l">
@@ -29,21 +27,18 @@ export function HomeScreen() {
           <Text variant="h4">{t('home.yourMovements')}</Text>
         </Box>
         <ListPoints isLoading={isFetching} data={data || []} />
-        {withRedemption !== null ? (
-          <Button
-            onPress={() => setWithRedemption(null)}
-            label={t('home.btnAll')}
-          />
+        {filter ? (
+          <Button onPress={() => setFilter('')} label={t('home.btnAll')} />
         ) : (
           <Box flexDirection="row" alignContent="space-between">
             <Button
-              onPress={() => setWithRedemption(false)}
+              onPress={() => setFilter(FILTERS.earned)}
               flex={1}
               mr="s"
               label={t('home.btnEarned')}
             />
             <Button
-              onPress={() => setWithRedemption(true)}
+              onPress={() => setFilter(FILTERS.redemption)}
               flex={1}
               label={t('home.btnRedemption')}
             />
