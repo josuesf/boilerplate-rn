@@ -4,7 +4,10 @@
       "title": "Bienvenido de vuelta!"
     },
     "yourPoints": "TUS PUNTOS",
-    "yourMovements": "TUS MOVIMIENTOS"
+    "yourMovements": "TUS MOVIMIENTOS",
+    "btnAll": "Todos",
+    "btnEarned": "Ganados",
+    "btnRedemption": "Canjeados"
   },
   "months": {
     "december": "Diciembre"

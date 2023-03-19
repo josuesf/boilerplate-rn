@@ -4,7 +4,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {RootStackParamList} from 'src/navigation/Routes';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
-import {FormatDate} from 'src/common/utils/Formats';
+import {FormatDate} from 'src/common/utils/formats';
 import {ImageProduct} from '../components/ImageProduct';
 import {ScrollView} from 'react-native';
 

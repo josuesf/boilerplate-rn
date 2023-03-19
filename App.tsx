@@ -6,12 +6,16 @@ import {MainNavigation} from 'src/navigation/MainNavigation';
 import 'src/i18n';
 import moment from 'moment';
 import 'moment/locale/es-mx';
+import {Provider} from 'react-redux';
+import {store} from 'src/redux/store';
 
 function App() {
   moment.locale('es-mx');
   return (
     <ThemeProvider>
-      <MainNavigation />
+      <Provider store={store}>
+        <MainNavigation />
+      </Provider>
     </ThemeProvider>
   );
 }

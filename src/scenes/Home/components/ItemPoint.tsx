@@ -3,7 +3,7 @@ import {Image, TouchableOpacity} from 'react-native';
 import {Box, Text} from '@components';
 import {IProduct} from 'src/common/models/Products';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {FormatDate} from 'src/common/utils/Formats';
+import {FormatDate} from 'src/common/utils/formats';
 
 type Props = {
   item: IProduct;
