@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginBottom": 39,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#020202",
+          "fontFamily": "Avenir",
+          "fontSize": 39,
+          "fontWeight": "800",
+          "lineHeight": 53,
+        },
+      ]
+    }
+  >
+    home.header.title
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#020202",
+          "fontFamily": "Avenir",
+          "fontSize": 31,
+          "lineHeight": 39,
+        },
+      ]
+    }
+    testID="name-user"
+  >
+    Josue Farfan
+  </Text>
+</View>
+`;
