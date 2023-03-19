@@ -30,12 +30,14 @@ export const ItemPoint = ({item, onPress}: Props) => {
           />
         </Box>
         <Box flex={1}>
-          <Text variant="h4" color="black" fontWeight="800">
+          <Text testID="item-name" variant="h4" color="black" fontWeight="800">
             {item.product}
           </Text>
-          <Text variant="h5">{FormatDate(date)}</Text>
+          <Text testID="item-date" variant="h5">
+            {FormatDate(date)}
+          </Text>
         </Box>
-        <Text variant="h4" color="black" fontWeight="800">
+        <Text testID="item-points" variant="h4" color="black" fontWeight="800">
           <Text
             fontWeight="800"
             color={item.is_redemption ? 'red' : 'greenPrimary'}>

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Header} from './Header';
-import {render, screen} from '__tests__/test-utils';
+import {render, screen} from 'test-utils';
 
-it('renders correctly', async () => {
+it('renders Header correctly', async () => {
   const nameExpected = 'Josue Farfan';
   const {queryByTestId} = render(<Header nameUser={nameExpected} />);
   expect(queryByTestId('name-user')).toHaveTextContent(nameExpected);

@@ -1,4 +1,5 @@
 import '@testing-library/jest-native/extend-expect';
+global.fetch = jest.fn(() => new Promise(resolve => resolve()));
 jest.useFakeTimers();
 jest.mock('react-i18next', () => ({
   // this mock makes sure any components using the translate hook can use it without a warning being shown
@@ -15,3 +16,11 @@ jest.mock('react-i18next', () => ({
     init: () => {},
   },
 }));
+jest.mock('@react-navigation/native', () => {
+  return {
+    ...jest.requireActual('@react-navigation/native'),
+    useNavigation: () => ({
+      navigate: jest.fn(),
+    }),
+  };
+});
