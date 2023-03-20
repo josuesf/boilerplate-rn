@@ -15,7 +15,7 @@ export const ListPoints = ({data, isLoading}: Props) => {
   return (
     <Box flex={1.2} bg="white" py="s" px="s" my="m" borderRadius={RFValue(10)}>
       {isLoading ? (
-        <ActivityIndicator />
+        <ActivityIndicator testID="loading" />
       ) : (
         <FlatList
           data={data}
