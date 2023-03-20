@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetail Display correctly product selected 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CFD6FF",
+              "height": 294,
+              "justifyContent": "flex-end",
+              "paddingBottom": 31,
+              "paddingLeft": 31,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#0B0B0B",
+                "fontFamily": "Avenir",
+                "fontSize": 39,
+                "fontWeight": "900",
+                "lineHeight": 47,
+              },
+            ]
+          }
+          testID="name-product"
+        >
+          Fantastic Granite Bacon
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "padding": 31,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#9B9898",
+                "borderRadius": 20,
+                "elevation": 5,
+                "height": 667,
+                "justifyContent": "center",
+                "marginBottom": 31,
+                "shadowColor": "#0B0B0B",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.25,
+                "shadowRadius": 3.8,
+              },
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://loremflickr.com/640/480/technics",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 20,
+                "height": 687,
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#9B9898",
+                "fontFamily": "Avenir",
+                "fontSize": 27,
+                "fontWeight": "900",
+                "lineHeight": 37,
+              },
+            ]
+          }
+        >
+          details.detailsProduct
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#0B0B0B",
+                "fontFamily": "Avenir",
+                "fontSize": 31,
+                "fontWeight": "900",
+                "lineHeight": 43,
+                "marginVertical": 31,
+              },
+            ]
+          }
+          testID="date-created"
+        >
+          details.boughtWhere 9 de diciembre, 2022
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#9B9898",
+                "fontFamily": "Avenir",
+                "fontSize": 27,
+                "fontWeight": "900",
+                "lineHeight": 37,
+              },
+            ]
+          }
+        >
+          details.pointsEarned
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#0B0B0B",
+                "fontFamily": "Avenir",
+                "fontSize": 31,
+                "fontWeight": "900",
+                "lineHeight": 43,
+                "marginVertical": 31,
+              },
+            ]
+          }
+          testID="points-earned"
+        >
+          200 points
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#334FFA",
+              "borderRadius": 20,
+              "height": 98,
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontFamily": "Avenir",
+                  "fontSize": 31,
+                  "fontWeight": "900",
+                  "lineHeight": 39,
+                },
+              ]
+            }
+          >
+            accept
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

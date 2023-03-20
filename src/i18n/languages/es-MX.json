@@ -14,7 +14,8 @@
   },
   "details": {
     "detailsProduct": "Detalles del producto:",
-    "pointsEarned": "Con esta compra acumulaste:"
+    "pointsEarned": "Con esta compra acumulaste:",
+    "boughtWhere": "Comprado el"
   },
   "points": "puntos",
   "accept": "Aceptar"

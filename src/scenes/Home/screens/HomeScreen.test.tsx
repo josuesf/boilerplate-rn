@@ -1,7 +1,7 @@
 import React from 'react';
 import {HomeScreen} from './HomeScreen';
 import {render, screen, act} from 'test-utils';
-import dummyProducts from '__tests__/dummyProducts';
+import dummyProducts from '__tests__/dummyProducts.json';
 import {rest} from 'msw';
 import {URL_PRODUCTS} from 'src/api/urls';
 import {setupServer} from 'msw/node';

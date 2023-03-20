@@ -23,14 +23,20 @@ export function ProductDetail({route, navigation}: Props) {
           height={RFValue(150)}
           pl="m"
           pb="m">
-          <Text variant="h2">{product.product}</Text>
+          <Text testID="name-product" variant="h2">
+            {product.product}
+          </Text>
         </Box>
         <Box p="m">
           <ImageProduct uri={product.image} />
           <Text variant="h4">{t('details.detailsProduct')}</Text>
-          <Text my="m" variant="h3">{`Comprado el ${dateCreated}`}</Text>
+          <Text testID="date-created" my="m" variant="h3">{`${t(
+            'details.boughtWhere',
+          )} ${dateCreated}`}</Text>
           <Text variant="h4">{t('details.pointsEarned')}</Text>
-          <Text my="m" variant="h3">{`${product.points} ${t('points')}`}</Text>
+          <Text testID="points-earned" my="m" variant="h3">{`${
+            product.points
+          } ${t('points')}`}</Text>
           <Button
             onPress={() => navigation.goBack()}
             variant="primary"
