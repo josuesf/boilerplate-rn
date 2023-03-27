@@ -5,7 +5,7 @@ import dummyProducts from '__tests__/dummyProducts.json';
 import {rest} from 'msw';
 import {URL_PRODUCTS} from 'src/api/urls';
 import {setupServer} from 'msw/node';
-import {FormatDate} from 'src/common/utils/formats';
+import {FormatDate} from 'src/common/utils/Formats';
 
 export const handlers = [
   rest.get(URL_PRODUCTS, (_req, res, ctx) => {
