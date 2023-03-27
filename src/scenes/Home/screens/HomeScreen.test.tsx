@@ -1,6 +1,6 @@
 import React from 'react';
 import {HomeScreen} from './HomeScreen';
-import {render, screen, act} from 'test-utils';
+import {render, screen, act, fireEvent} from 'test-utils';
 import dummyProducts from '__tests__/dummyProducts.json';
 import {rest} from 'msw';
 import {URL_PRODUCTS} from 'src/api/urls';
@@ -11,12 +11,17 @@ export const handlers = [
   rest.get(URL_PRODUCTS, (_req, res, ctx) => {
     return res(ctx.json(dummyProducts));
   }),
+  rest.get(URL_PRODUCTS + '?is_redemption=false', (_req, res, ctx) => {
+    return res(ctx.json(dummyProducts.filter(e => e.is_redemption === false)));
+  }),
 ];
 
 export const server = setupServer(...handlers);
 describe('HomeScreen', function () {
   // Enable the API mocking before tests.
-  beforeAll(() => server.listen());
+  beforeAll(() => {
+    server.listen();
+  });
 
   // Reset any runtime request handlers we may add during the tests.
   afterEach(() => {
@@ -27,7 +32,7 @@ describe('HomeScreen', function () {
   // Disable the API mocking after the tests finished.
   afterAll(() => server.close());
 
-  test('Product find should display image with proper source', async () => {
+  test('Product find should display data product', async () => {
     const {queryByText, queryByTestId} = render(<HomeScreen />);
     // Show loading data
     expect(queryByTestId('loading')).toBeVisible();
@@ -39,6 +44,15 @@ describe('HomeScreen', function () {
       FormatDate(new Date(dummyProducts[0].createdAt)),
     );
     expect(screen.toJSON()).toMatchSnapshot();
-    // expect(getByAltText(rgxAlt)).toBeInTheDocument();
+  });
+  test('Show button all when filter is empty and the right Total Points', async () => {
+    render(<HomeScreen />);
+    const btnEarned = screen.getByTestId('btn-earned');
+    expect(btnEarned).toBeVisible();
+    expect(screen.getByTestId('btn-redemption')).toBeVisible();
+    fireEvent.press(btnEarned);
+    await act(() => {});
+    expect(screen.getByTestId('btn-all')).toBeVisible();
+    //...
   });
 });

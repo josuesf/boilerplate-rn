@@ -29,16 +29,22 @@ export function HomeScreen() {
         </Box>
         <ListPoints isLoading={isFetching} data={data || []} />
         {filter ? (
-          <Button onPress={() => setFilter('')} label={t('home.btnAll')} />
+          <Button
+            testID="btn-all"
+            onPress={() => setFilter('')}
+            label={t('home.btnAll')}
+          />
         ) : (
           <Box flexDirection="row" alignContent="space-between">
             <Button
+              testID="btn-earned"
               onPress={() => setFilter(FILTERS.earned)}
               flex={1}
               mr="s"
               label={t('home.btnEarned')}
             />
             <Button
+              testID="btn-redemption"
               onPress={() => setFilter(FILTERS.redemption)}
               flex={1}
               label={t('home.btnRedemption')}

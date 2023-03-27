@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomeScreen Product find should display image with proper source 1`] = `
+exports[`HomeScreen Product find should display data product 1`] = `
 <RCTSafeAreaView
   style={
     Object {
@@ -697,6 +697,7 @@ exports[`HomeScreen Product find should display image with proper source 1`] = `
             "opacity": 1,
           }
         }
+        testID="btn-earned"
       >
         <Text
           style={
@@ -736,6 +737,7 @@ exports[`HomeScreen Product find should display image with proper source 1`] = `
             "opacity": 1,
           }
         }
+        testID="btn-redemption"
       >
         <Text
           style={
