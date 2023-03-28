@@ -36,3 +36,6 @@ global.Request = Request;
 global.Headers = Headers;
 global.Response = Response;
 global.AbortController = AbortController;
+export default jest.mock(
+  'react-native/Libraries/Animated/NativeAnimatedHelper',
+);

@@ -9,10 +9,11 @@ import {FormatDate} from 'src/common/utils/Formats';
 
 export const handlers = [
   rest.get(URL_PRODUCTS, (_req, res, ctx) => {
-    return res(ctx.json(dummyProducts));
-  }),
-  rest.get(URL_PRODUCTS + '?is_redemption=false', (_req, res, ctx) => {
-    return res(ctx.json(dummyProducts.filter(e => e.is_redemption === false)));
+    const filter = _req.url.searchParams.get('is_redemption');
+    const data = filter
+      ? dummyProducts.filter(e => e.is_redemption === JSON.parse(filter))
+      : dummyProducts;
+    return res(ctx.json(data));
   }),
 ];
 
@@ -44,15 +45,18 @@ describe('HomeScreen', function () {
       FormatDate(new Date(dummyProducts[0].createdAt)),
     );
     expect(screen.toJSON()).toMatchSnapshot();
+    expect(screen.getByText('50.00 pts')).toBeVisible();
   });
   test('Show button all when filter is empty and the right Total Points', async () => {
     render(<HomeScreen />);
+    const {getByTestId} = screen;
     const btnEarned = screen.getByTestId('btn-earned');
     expect(btnEarned).toBeVisible();
     expect(screen.getByTestId('btn-redemption')).toBeVisible();
     fireEvent.press(btnEarned);
+    expect(getByTestId('loading')).toBeVisible();
     await act(() => {});
     expect(screen.getByTestId('btn-all')).toBeVisible();
-    //...
+    expect(screen.getByText('200.00 pts')).toBeVisible();
   });
 });
