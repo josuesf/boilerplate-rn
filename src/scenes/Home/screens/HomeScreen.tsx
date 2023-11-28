@@ -6,6 +6,8 @@ import {ListPoints} from '../components/ListPoints';
 import {useGetProductsQuery, FILTERS} from 'src/api/productsApi';
 import {getTotalPoints} from 'src/common/utils/calculation';
 
+import {ReButton} from '../components/ReButton';
+
 export function HomeScreen() {
   const {t} = useTranslation();
   const [filter, setFilter] = React.useState<string>('');
@@ -27,13 +29,56 @@ export function HomeScreen() {
           </Card>
           <Text variant="h4">{t('home.yourMovements')}</Text>
         </Box>
+
         <ListPoints isLoading={isFetching} data={data || []} />
-        {filter ? (
+        
+
+        {/* refactoring */}
+        {/* 1 */}
+        <Box flexDirection="row" alignContent="space-between">
+          <ReButton 
+            text='Ganados'
+            click={ () => setFilter(FILTERS.earned) }
+            longClick = { () => setFilter('') }
+          />
+        <ReButton 
+            text='Acumulados'
+            click={ () => setFilter(FILTERS.redemption) }
+            longClick = {() => setFilter('') }
+        />
+        </Box>
+
+        {/* 2 */}
+        {/* {filter ? (
           <Button
             testID="btn-all"
             onPress={() => setFilter('')}
             label={t('home.btnAll')}
-          />
+          ></Button>
+          // <Button></Button>
+        ) : (
+          <Box flexDirection="row" alignContent="space-between">
+            <ReButton 
+              text='Ganados'
+              click={ () => setFilter(FILTERS.earned) }
+            />
+            <ReButton 
+              text='Acumulados'
+              click={ () => setFilter(FILTERS.redemption) }
+            />
+        </Box>
+        )} */}
+
+      
+
+
+        {/* {filter ? (
+          <Button
+            testID="btn-all"
+            onPress={() => setFilter('')}
+            label={t('home.btnAll')}
+          ></Button>
+          // <Button></Button>
         ) : (
           <Box flexDirection="row" alignContent="space-between">
             <Button
@@ -42,7 +87,7 @@ export function HomeScreen() {
               flex={1}
               mr="s"
               label={t('home.btnEarned')}
-            />
+            /> 
             <Button
               testID="btn-redemption"
               onPress={() => setFilter(FILTERS.redemption)}
@@ -50,7 +95,8 @@ export function HomeScreen() {
               label={t('home.btnRedemption')}
             />
           </Box>
-        )}
+        )} */}
+
       </Box>
     </Container>
   );
