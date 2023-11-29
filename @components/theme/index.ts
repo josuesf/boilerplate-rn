@@ -100,6 +100,11 @@ export const theme = createTheme({
       borderRadius: RFValue(20),
       padding: 'sm',
     },
+    secondary: {
+      backgroundColor: 'purpleLight',
+      borderRadius: RFValue(20),
+      padding: 'sm',
+    },
   },
 });
 
