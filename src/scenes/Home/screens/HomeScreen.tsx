@@ -6,7 +6,7 @@ import {useHomeScreen} from '../hooks/useHomeScreen';
 import {DropdownSelect} from '../components/DropdownSelect';
 
 export function HomeScreen() {
-  const { t, totalPoints, isFetching, data, setFilter} = useHomeScreen();
+  const {t, totalPoints, isFetching, data, setFilter} = useHomeScreen();
   return (
     <Container>
       <Box flex={1} mx="sm" mt="l">

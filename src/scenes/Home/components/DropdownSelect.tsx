@@ -1,22 +1,23 @@
 import React, {useState} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {FILTERS} from 'src/api/productsApi';
+import {useTranslation} from 'react-i18next';
 
 type Props = {
   setFilter: (filter: string) => void;
 };
 
 export const DropdownSelect = ({setFilter}: Props) => {
+  const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Ganados', value: FILTERS.earned},
-    {label: 'Canjeados', value: FILTERS.redemption},
-    {label: 'Todos', value: ''},
+    {label: t('home.btnEarned'), value: FILTERS.earned},
+    {label: t('home.btnRedemption'), value: FILTERS.redemption},
+    {label: t('home.btnAll'), value: ''},
   ]);
 
   const handleItemChange = (item: any) => {
-    console.log(item);
     setFilter(item);
   };
 
